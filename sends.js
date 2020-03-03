@@ -20,6 +20,7 @@ mqttClient.socket.on('message', function (topic, message) {
 // wssClient.on('open', function open() {
 //     console.log('wssClient is open now.');
 // });
+
 socket.emit('bridge-connect', {"topic": "usertopic", "id": "ac"});
 
   // Send the message to the server
