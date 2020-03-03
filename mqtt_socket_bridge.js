@@ -20,7 +20,6 @@ io.sockets.on('connection',(socket) =>{
         }
         console.log(clients);
     });
-
     //receiving a publish message 
 
     socket.on('publish-message', (data)=>{
