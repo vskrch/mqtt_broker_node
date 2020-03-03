@@ -2,7 +2,7 @@ const app = require('http').createServer();
 const io =  require('socket.io').listen(app);
 app.listen(3000);
 const mqtt = require('mqtt');
-
+const  mqttClient = mqtt.connect('mqtt://127.0.0.1');
 const clients = {};
 
 io.sockets.on('connection',(socket) =>{
@@ -65,7 +65,7 @@ io.sockets.on('connection',(socket) =>{
     const client = mqtt.connect('mqtt://localhost',options)
 
     client.on('connect', ()=> {
-        console.log('received message %s %s',topic,message);
+       // console.log('received message %s %s',topic,message);
         console.log("MQTT to WS Sending " + message+"to"+topic);
         for(var name in clients){
             console.log(name);
